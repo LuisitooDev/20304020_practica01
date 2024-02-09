@@ -3,15 +3,13 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: 'standard',
+  extends: ['standard', 'plugin:github/recommended'], 
   overrides: [
     {
       env: {
         node: true
       },
-      files: [
-        '.eslintrc.{js,cjs}'
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script'
       }
@@ -21,6 +19,6 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  rules: {
-  }
-}
+  plugins: ['github'], 
+  rules: {}
+};

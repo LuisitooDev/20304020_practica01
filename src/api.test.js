@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('./api'); 
 
-// Test the /tasks GET endpoint..
+// Test the /tasks GET endpoint......
 test('GET /tasks returns all tasks', async () => {
   const response = await request(app).get('/tasks');
   expect(response.status).toBe(200);

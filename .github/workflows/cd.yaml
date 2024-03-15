@@ -1,9 +1,10 @@
-name: cd
+name: API CD
 
 on:
   push:
-    branches:
-      - "main"
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
 
 jobs:
   build:
@@ -29,7 +30,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
-        
-        - name: Build and push Docker images
-          uses: docker/build-push-action@v5.3.0
-            
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5.3.0
